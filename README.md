@@ -1,3 +1,6 @@
-# dfttapp-apprentice
+# vue-multi 
+vue多页面脚手架
 
-东方头条APP - 收徒
+npm run dev
+
+npm run build
