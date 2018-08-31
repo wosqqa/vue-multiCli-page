@@ -1,2 +1,3 @@
-# vue-multiCli-page
-vue多页面基础框架
+# dfttapp-apprentice
+
+东方头条APP - 收徒

@@ -1,0 +1,132 @@
+@import '../common/_vars.scss';
+@import '../common/_tools.scss';
+@import '../common/_icon@2x.scss';
+
+.container{
+  width: 7.5rem;
+  margin: 0 auto;
+}
+
+.text-red{
+  color: $red;
+}
+
+*{
+  -webkit-tap-highlight-color:transparent;
+  -moz-user-select:none;
+  -webkit-user-select:none;
+  user-select:none;  
+}
+
+@mixin tab-keyframes(){
+  @keyframes linear {
+    0% {
+      width: 5%;
+    }
+    50% {
+      width: 15%;
+    }
+    100% {
+      width: 5%;
+    }
+  }
+  animation: linear 1s;
+}
+.navbar-fixed-top{//收徒tab
+  *{
+    color: $base-font;
+  }
+  position: fixed;
+  z-index: 1000;
+  width: 7.5rem;
+  top: 0;
+  left: 0;
+  background-color: $topbg-color;
+  border-bottom: 1px solid #cccccc;
+  @include flexrnsa();
+  //padding: 0 0.3rem;
+  font-size: .28rem;
+  div{
+    padding: .2rem;
+    background:none;
+    a,a:hover,a:active,a:visited,a:link,a:focus{
+      -webkit-tap-highlight-color:rgba(0,0,0,0);
+      -webkit-tap-highlight-color: transparent;
+      outline:none;
+      background: none;
+      text-decoration: none;
+    }
+  };
+  .top-active{
+    a{
+      color: #f44b50;
+    }
+    .nav-bottom{
+      position: absolute;
+      bottom: 0;
+      height: .05rem;
+      transition: all 1s;
+      background-color: #f44b50;
+    }
+    .nav-bottom-1{
+      @include tab-keyframes();
+    }
+    .nav-bottom-2{
+      @include tab-keyframes();
+    }
+    .nav-bottom-3{
+      @include tab-keyframes();
+    }
+    .nav-bottom-4{
+      @include tab-keyframes();
+    }
+  }
+}
+
+.mask{
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba($color: #000000, $alpha: .3);
+  z-index: 100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  &.flex{
+    display: flex !important;
+  }
+  .dialog{
+    border-radius: .3rem;
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    .close{
+      width: .3rem;
+      height: .3rem;
+      position: absolute;
+      right: .3rem;
+      top: .3rem;
+      @include back-img('../../img/icon/dialog_close');
+      background-size: cover;
+      z-index: 150;
+    }
+    .close-white{
+      width: .3rem;
+      height: .3rem;
+      position: absolute;
+      right: .3rem;
+      top: .3rem;
+      @include back-img('../../img/icon/dialog_close_white');
+      background-size: cover;
+      z-index: 150;
+    }
+  }
+}
+.font-red{
+  color: $red;
+}
+.gold-text{
+  color: $gold;
+}

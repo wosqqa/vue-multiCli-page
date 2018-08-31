@@ -1,0 +1,205 @@
+@mixin font($val){
+  line-height: $val;
+  height: $val;
+  font-size: $val;
+}
+@mixin back-img($url){
+  @media only screen and (min-width: 150px) {
+    background-image: url($url + '@2x.png');
+  }
+  @media only screen and (min-width: 376px) {
+    background-image: url($url + '@3x.png');
+  }
+}
+
+@mixin flexrnsa(){
+  display:  flex;
+  flex-flow: row nowrap;
+  justify-content:  space-around;
+}
+@mixin dialog(){
+  position: fixed;
+  z-index: 1200;
+  top: 0;
+  width: 10rem;
+  background-color: rgba(0, 0, 0, 0.29);
+  height: 100%;
+  .dialog-content{
+    font-size: .36rem;
+    background-color: #fdfdfd;
+    padding: .2rem 0.4rem 0.4rem 0.4rem;
+    border-radius: .5rem;
+  }
+}
+@mixin flexrwsa(){
+  display:  flex;
+  flex-flow: row wrap;
+  justify-content:  space-around;
+}
+
+@mixin flexcnsa(){
+  display:  flex;
+  flex-flow: column nowrap;
+  justify-content:  space-around;
+}
+
+@mixin flexcwsa(){
+  display:  flex;
+  flex-flow: column wrap;
+  justify-content:  space-around;
+}
+
+@mixin bgnrcbc($val,$src){
+  @include back-img($src);
+  background-repeat: no-repeat;
+  position: relative;
+  display: inline-block;
+  background-size: cover;
+  width: $val;
+  height: $val;
+}
+
+@mixin list-title($val){
+    .list-title{
+      background-color: #fff;
+      padding: 0.2rem .3rem;
+      height: 1.2rem;
+      border-bottom: 1px solid #f4f4f4;
+      font-size: 15px;
+      line-height: 0.8rem;
+      color: #333333;
+      .list-title-img{
+        width: .6rem;
+        height: 0.6rem;
+        margin-left: 0.1rem;
+        margin-right: 0.2rem;
+        margin-top: -0.05rem;
+        vertical-align: middle;
+        background-repeat: no-repeat;
+        position: relative;
+        display: inline-block;
+        background-size: cover;
+        @include back-img($val);
+      }
+    }
+}
+
+@mixin list-txt(){
+  .list-txt{
+    display:  flex;
+    flex-flow: row nowrap;
+    padding: 0.23rem .3rem;
+    justify-content:  space-around;
+    background-color: #fff;
+    line-height: 1.25rem;
+    // height: 0.9rem;
+    .list-img{
+      width: 40px;
+      height: 1.22rem;
+      line-height: 1.22rem;
+      flex-grow: 0;
+      overflow: hidden;
+      vertical-align: middle;
+      img{
+        width: 40px;
+        height: 40px;
+        margin-top: 0.1rem;
+        margin-right: 5px;
+        border-radius: 50%;
+      }
+      .list-user-sp{
+        display: block;
+        font-size: 13px;
+        color: #9f9f9f;
+      }
+    }
+    .list-user{
+      flex-grow: 1;
+      padding-left: 0.18rem;
+      align-self: center;
+      font-size: 15px;
+      line-height: 0.62rem;
+      .list-user-sp{
+        display: block;
+        font-size: 13px;
+        color: #9f9f9f;
+      }
+    }
+    .list-gx{
+      flex-grow: 0;
+      align-self: center;
+      line-height: 0.62rem;
+      p{
+        font-size: 18px;
+        .list-jinbi{
+          @include back-img('../../assets/img/icon/jinbi');
+          background-repeat: no-repeat;
+          position: relative;
+          display: inline-block;
+          background-size: cover;
+          width: 15px;
+          height: 15px;
+          margin-left: 0.05rem;
+        }
+        .list-hx{
+          border-radius: 0.5rem;
+          width: 51px;
+          display: block;
+          text-align: center;
+          // padding: .05rem 0rem;
+          margin-left: 0.8rem;
+          background-color: white;
+          font-size: 12px;
+          color: #f44b50;
+          border: 1px solid;
+        }
+
+      }
+      .text-red{
+        color: #f44b50;
+        line-height: 0.9rem;
+      }
+      .list-p{
+        font-size: 12px;
+        text-align: right;
+        color: #9f9f9f;
+        padding-top: 0.05rem;
+
+      }
+      .list-line{
+        font-size: 12px;
+        margin: 0.2rem auto;
+        text-align: right;
+        color: #9f9f9f;
+      }
+    }
+  }
+}
+
+@mixin container-nothing($url){
+  background-color: #fff;
+  font-size: 0.36rem; 
+  text-align: center;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  .nothing-img{
+    @include bgnrcbc(1.5rem,$url);
+    width: 5rem;
+    height: 3.5rem;
+  }
+  .nothing-text{
+    line-height: 0.9rem;
+    font-size: 0.43rem;
+    color: #999999;
+  }
+  .nothing-btn{
+    padding: .25rem;
+    font-size: .48rem;
+    margin: .3rem 2.5rem;
+    text-align: center;
+    border-radius: .6rem;
+    background-color: #f44b50;
+    color: #fff;
+  }
+}
